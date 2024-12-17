@@ -1,88 +1,132 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/h8SwtrsU)
-# COSI 116A Final Project Template
+# Project Team 18: Public Transportation  
+*COSI 116A - Information Visualization, Fall 2024*  
 
-This template will help you get started with your project. Please look through all these materials so you know how to organize your project.
+**Team Members**:  
+- Jason Chen  
+- Capo Wang  
+- Tri Phan  
+- Isaac Zygmuntowicz  
 
-## The GitHub Pages Website
+**Instructor**: Prof. Dylan Cashman  
+**Course**: Brandeis University, COSI 116A  
 
-Make sure you publish your project to github pages, and put the URL here: 
+---
 
-### Github Pages
+## Motivation  
 
-For your final project, you must render your project as a Github Page.  Github pages is a feature of GitHub repositories that gives you a publicly available URL that loads your repository.  The link to the page corresponding to your repository should be written into the readme file of your repository.
+After the global COVID-19 pandemic, people's habits and economic activities changed drastically. Public transportation was one of the most affected sectors due to social distancing and safety measures.  
 
-To publish your repository, follow the instructions at https://pages.github.com/.  You'll have to go to the settings of your repository and point GitHub Pages to your master branch.  Your GitHub Pages link will be of the following format:
+This project visualizes **New York State public transportation data** from **March 2020 to October 2024**. Our work explores:  
+- The decline and recovery of public transportation usage.  
+- The impact of COVID-19 cases on ridership trends.  
+- Spatial patterns of subway ridership across New York City.  
 
-    https://cosi116a-brandeis-infovis-fall23.github.io/graduate-team-12-mbta
+The project provides insights for government agencies and public transportation offices to better understand usage trends and plan future developments.
 
-Note that you may have to clear your cache and reload (Ctrl+F5 on Chrome) a few times before seeing your page.
+---
 
+## Visualizations  
 
-## Setup
+Our final visualization combines three interactive visualizations:  
 
-**Under no circumstances should you be editing files via the GitHub user interface.** Do all your edits locally after cloning the repository.
+1. **Heat Map**  
+   - Displays subway ridership trends across different stations in New York City over time.  
+   - Users can hover over stations to view detailed data.  
 
-1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
+2. **Line Chart**  
+   - Shows the overall public transportation ridership and COVID-19 cases over time.  
+   - Supports brushing and filtering to explore trends for specific periods.  
 
-1. In `README.md` update the URL above to point to your GitHub pages website.
+3. **Bar Chart**  
+   - Compares different public transportation types as a percentage of pre-COVID ridership.  
+   - Allows users to filter the line chart by selecting transportation types.  
 
-1. `CD` or open a terminal / command prompt window into the cloned folder.
+Together, these visualizations provide an interactive and comprehensive view of public transportation trends.
 
-1. Start a simple python webserver. E.g., one of these commands:
-    * `python -m http.server 8000`
-    * `python3 -m http.server 8000`
-    * `py -m http.server 8000`
-    If you are using Python 2 you will need to use `python -m SimpleHTTPServer 8000` instead, but please switch to Python 3 as [Python 2 was sunset on 2020.01.01](https://www.python.org/doc/sunset-python-2/).
+---
 
-1. Wait for the output: `Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/)`
+## Design Process  
 
-1. Now open your web browser (Firefox or Chrome) and navigate to the URL: http://localhost:8000
+Our project went through multiple iterations to ensure clarity and interactivity:
 
-## Root Files
-* `README.md` is this explanatory file for the repo.
+- **Initial Goals**:  
+   - Show public transportation trends over time.  
+   - Visualize spatial subway ridership patterns.
 
-* `index.html` contains the main website content. It includes comments surrounded by `<!--` and `-->` to help guide you through making your edits.
+- **Challenges**:  
+   - Handling and cleaning large datasets.  
+   - Designing visualizations that balance clarity and detail.  
 
-* `style.css` contains the CSS.
+- **Decisions**:  
+   - The **line chart** captures overall trends and integrates COVID-19 data to show correlations.  
+   - The **bar chart** highlights recovery across different transportation types compared to pre-COVID levels.  
+   - The **heat map** focuses on subway ridership due to its dominance and clear spatial representation.  
 
-* `LICENCE` is your source code license.
+Each visualization was designed to complement the others, enabling deeper exploration through interactive brushing, filtering, and highlighting.  
 
-## Folders
-Each folder has an explanatory `README.md` file
+---
 
-* `data` is where you will put your data files.
+## GitHub Pages  
 
-* `favicons` contains the favicons for the course projects. You shouldn't change anything here.
+The project is published on GitHub Pages. Access the live visualization here:  
 
-* `files` will contain your slides (PDF) and video (MP4).
+[https://cosi116a-brandeis-infovis-fall23.github.io/cosi-116a-f24-final-project-repository-Asurazpr/](https://cosi116a-brandeis-infovis-fall23.github.io/cosi-116a-f24-final-project-repository-Asurazpr/)
 
-* `images` will contain your screenshots, diagrams, and photos.
+## Data Sources  
 
-* `js` will contain all JavaScript files you write.
+The project uses the following datasets:  
 
-  * `visualization.js` is the main code that builds all your visualizations. Each visualization should be built following the [Reusable Chart model](https://bost.ocks.org/mike/chart/)
-  
-* `lib` will contain any JavaScript library you use. It currently includes D3.
+- **Subway Ridership Data**:  
+   - Combines early 2020 Turnstile data with later subway ridership records.  
+   - Data processing included standardizing station names and merging datasets for consistency.  
 
-## Workflow
+- **MTA Daily Ridership Data**:  
+   - Provides daily ridership counts for various transportation types (Subway, Buses, LIRR, etc.).  
+   - Source: MTA Data Portal.  
 
-As you work with your team, you may have issues merging your changes. We recommend you pick one member of the team to be the project manager and deal with merging any pull requests.
+- **COVID-19 Cases**:  
+   - Statewide COVID-19 testing data for New York.  
 
-Instead of all working directly out of the main `master` branch, you can try adopting a Git branching model for development. See, e.g., [this article by Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/) and the included image:
+These datasets were cleaned, merged, and analyzed to ensure accurate and meaningful visualizations.
 
-![Image of Git branching model by Vincent Driessen](http://www.ccs.neu.edu/home/cody/courses/shared/git-model.png)
+---
 
-## Grading
+## Task Analysis  
 
-Make sure to check these aspects of your work, which are important for every submission:
+Our primary goals for the project were as follows:  
 
-* Coding was done properly:
-    * Your code was regularly committed and not edited via the GitHub user interface online.
-    * You have clear, commented, and validated code.
-    * Your web page loads properly and looks as expected in the latest Firefox and Chrome browsers.
-    * Any code from other sources (modified or copied straight) is acknowledged.
+1. **Visualize trends in public transportation ridership**:  
+   - Show how ridership changed over time during and after the COVID-19 pandemic.  
 
-* Your visualization works as required:
-    * Styles are consistent across views.
-    * None of the visualizations change size or move on the screen as you interact with them.
-    
+2. **Explore spatial patterns**:  
+   - Highlight subway ridership by station across New York City using a heat map.  
+
+3. **Compare ridership types**:  
+   - Use a bar chart to compare ridership recovery percentages for different transportation modes.  
+
+4. **Analyze correlations**:  
+   - Explore the relationship between COVID-19 cases and ridership trends using a line chart.  
+
+The interactive features allow users to filter, brush, and explore specific time periods and transportation types.
+
+---
+
+## Conclusion  
+
+This project effectively visualizes the significant impact of the COVID-19 pandemic on public transportation in New York State. By integrating a heat map, a line chart, and a bar chart, we provide a comprehensive, interactive, and user-friendly exploration of ridership trends.  
+
+### Key Insights:  
+- Subway ridership declined drastically during the early phases of the pandemic but began to recover over time.  
+- Correlations between rising COVID-19 cases and declining public transportation usage were observed.  
+- Certain transportation types recovered at different rates compared to pre-COVID levels.  
+
+The project offers meaningful insights for policymakers, urban planners, and transportation agencies to better understand and address changes in public transportation usage.
+---
+
+## Acknowledgments  
+
+- **Instructor**: Prof. Dylan Cashman  
+- **Tools Used**:  
+   - D3.js  
+   - Leaflet.js  
+- **Data Sources**: MTA Data Portal, New York State COVID-19 Data, Subway Ridership data.  
